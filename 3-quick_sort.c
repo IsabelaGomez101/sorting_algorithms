@@ -54,10 +54,12 @@ int partitionLomuto(int *array, int left, int right, size_t size)
  */
 void quicksort_lomuto(int *array, int left, int right, size_t size)
 {
-	size_t index = partitionLomuto(array, left, right, size);
+	size_t index = 0;
 
+   /*recursive calls*/
 	if (left < right)
 	{
+	index = partitionLomuto(array, left, right, size);
 	if (index > 0)
 		quicksort_lomuto(array, left, index - 1, size);
 	if (index != size)
